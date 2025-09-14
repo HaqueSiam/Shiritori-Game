@@ -9,7 +9,7 @@ export default function SocketProvider({ children }) {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
-    const s = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:4000', {
+    const s = io(import.meta.env.VITE_SOCKET_URL, {
       transports: ['websocket']
     });
     socketRef.current = s;
